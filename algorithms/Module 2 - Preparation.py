@@ -20,11 +20,11 @@ import pickle   # Used for file operations
 # ======================================================
 
 # Input & output filenames (you can edit)
-mod1_filename_input = "mod1_filename_input"
+mod1_filename_input = "mod1_filename_output"
 mod2_filename_output = "mod2_filename_output"
 
 # Open the result data from the last module
-file = open("./assets/mod1/"+mod1_filename_input+".mod1", "rb")
+file = open("../assets/mod1/"+mod1_filename_input+".mod1", "rb")
 
 # The file that contains all the sequences generated in the module 1
 data = pickle.load(file)
@@ -84,5 +84,5 @@ for i in data:
 combinations = [exonComb,intronComb]
 
 # Save the result data
-file = open("./assets/mod2/"+mod2_filename_output+".mod2","wb")
+file = open("../assets/mod2/"+mod2_filename_output+".mod2","wb")
 pickle.dump(combinations,file)

@@ -3,6 +3,9 @@
 # Transform the entry string to a list with just the important data
 # Entry example: "join{[<0:29](+), [130:161](+), [230:>243](+)}"
 # Output example: [[0,28],[130,160],[230,243]]
+#TODO - Make it shows if runned correctly
+#TODO - Make it shows the error
+#TODO pasta pro arquivo de entrada onde o usuario só mete la e depois movo para os módulos, sempre deixando vazia depois de lido o arquivo
 def make_exons_list(seq):
     seq = str(seq)
     seq = seq.split("{")
@@ -52,11 +55,11 @@ import pickle # Used for file operations
 # ======================================================
 
 # Input & output filenames (you can edit)
-genbank_filename_input = "genbank_filename_input"
+genbank_filename_input = "colletotrichum_actin_att"
 mod1_filename_output = "mod1_filename_output"
 
 # Genbank archive to be used
-genbank_archive = open("./assets/gb/"+genbank_filename_input+".gb","r")
+genbank_archive = open("../assets/gb/"+genbank_filename_input+".gb","r")
 
 # Variable that contains all of the processed data
 data = []
@@ -91,6 +94,6 @@ for register in SeqIO.parse(genbank_archive, "genbank"):
             data.append([seq,exons_list,exons,introns_list,introns])
 
 # Saves the result in the file
-file = open("./assets/mod1/"+mod1_filename_output+".mod1","wb")
+file = open("../assets/mod1/"+mod1_filename_output+".mod1","wb")
 pickle.dump(data,file)
 # ========================================================================================================================

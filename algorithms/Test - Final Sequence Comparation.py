@@ -29,15 +29,15 @@ def predictResult(seq):
 # ================================================================================================
 
 # Input & output filenames (you can edit)
-model_filename_input = "model_filename_input"
-mod1_filename_input = "mod1_filename_input"
+model_filename_input = "model_filename_output"
+mod1_filename_input = "mod1_filename_output"
 
 # Load the model to be tested
-file = open("./results/"+model_filename_input+".sav", "rb")
+file = open("../results/"+model_filename_input+".sav", "rb")
 clf = pickle.load(file)
 
 # Load the data from module 1
-file = open("./assets/mod1/"+mod1_filename_input+".mod1", "rb")
+file = open("../assets/mod1/"+mod1_filename_input+".mod1", "rb")
 data = pickle.load(file)
 
 total = 0
